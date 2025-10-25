@@ -1,87 +1,187 @@
-# Frontend Mentor - QR code component
+# Frontend Mentor - QR code component solution
 
-![Design preview for the QR code component coding challenge](./preview.jpg)
+This is a solution to the [QR code component challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/qr-code-component-iux_sIO_H). Frontend Mentor challenges help you improve your coding skills by building realistic projects. 
 
-## Welcome! 👋
+## Table of contents
 
-Thanks for checking out this front-end coding challenge.
+- [Overview](#overview)
+  - [Screenshot](#screenshot)
+  - [Links](#links)
+- [My process](#my-process)
+  - [Built with](#built-with)
+  - [What I learned](#what-i-learned)
+  - [Continued development](#continued-development)
+  - [Useful resources](#useful-resources)
+- [Author](#author)
 
-[Frontend Mentor](https://www.frontendmentor.io) challenges help you improve your coding skills by building realistic projects.
+## Overview
 
-**To do this challenge, you need a basic understanding of HTML and CSS.**
+### Screenshot
 
-## The challenge
+#### Desktop View
+![Desktop Preview](./preview_desktop.png)
 
-Your challenge is to build out this QR code component and get it looking as close to the design as possible.
+#### Mobile View
+![Mobile Preview](./preview_mobile.png)
 
-You can use any tools you like to help you complete the challenge. So if you've got something you'd like to practice, feel free to give it a go.
+### Links
 
-Want some support on the challenge? [Join our community](https://www.frontendmentor.io/community) and ask questions in the **#help** channel.
+- Solution URL: [GitHub Repository](https://github.com/jazs790715/QR-code-component)
+- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
 
-## Where to find everything
+## My process
 
-Your task is to build out the project to the designs inside the `/design` folder. You will find both a mobile and a desktop version of the design. 
+### Built with
 
-The designs are in JPG static format. Using JPGs will mean that you'll need to use your best judgment for styles such as `font-size`, `padding` and `margin`. 
+- Semantic HTML5 markup
+- CSS custom properties
+- Flexbox
+- CSS logical properties (inline-size, margin-block, padding-inline)
+- Custom font loading with @font-face
+- Mobile-first workflow
+- **Figma** - For design inspection and specifications
 
-If you would like the design files (we provide Sketch & Figma versions) to inspect the design in more detail, you can [subscribe as a PRO member](https://www.frontendmentor.io/pro).
+### What I learned
 
-You will find all the required assets in the `/images` folder. The assets are already optimized.
+During this project, I reinforced important knowledge about modern CSS, semantic structure, and the use of professional design tools:
 
-There is also a `style-guide.md` file containing the information you'll need, such as color palette and fonts.
+**1. Working with Figma for more professional development**
 
-## Building your project
+Using Figma as a design tool completely transformed my workflow and elevated the quality of the final result:
 
-Feel free to use any workflow that you feel comfortable with. Below is a suggested process, but do not feel like you need to follow these steps:
+- **Precision in measurements**: Figma allowed me to extract exact values for spacing, font sizes, and component dimensions, eliminating guesswork and ensuring pixel-perfect implementation.
 
-1. Initialize your project as a public repository on [GitHub](https://github.com/). Creating a repo will make it easier to share your code with the community if you need help. If you're not sure how to do this, [have a read-through of this Try Git resource](https://try.github.io/).
-2. Configure your repository to publish your code to a web address. This will also be useful if you need some help during a challenge as you can share the URL for your project with your repo URL. There are a number of ways to do this, and we provide some recommendations below.
-3. Look through the designs to start planning out how you'll tackle the project. This step is crucial to help you think ahead for CSS classes to create reusable styles.
-4. Before adding any styles, structure your content with HTML. Writing your HTML first can help focus your attention on creating well-structured content.
-5. Write out the base styles for your project, including general content styles, such as `font-family` and `font-size`.
-6. Start adding styles to the top of the page and work down. Only move on to the next section once you're happy you've completed the area you're working on.
+- **Precise color system**: I was able to obtain exact HSL values directly from the design:
+```css
+:root {
+    --White: hsl(0, 0%, 100%);
+    --Slate-300: hsl(212, 45%, 89%);
+    --Slate-500: hsl(216, 15%, 48%);
+    --Slate-900: hsl(218, 44%, 22%);
+}
+```
 
-## Deploying your project
+- **Consistent typography**: Figma provided detailed information about the Outfit font (weights 400 and 700), specific sizes (22px for headings, 15px for paragraphs), and exact line-heights (120% and 140%).
 
-As mentioned above, there are many ways to host your project for free. Our recommended hosts are:
+- **Shadow and effects inspection**: I was able to replicate the box-shadow from the design exactly:
+```css
+box-shadow: 0px 25px 25px rgb(0 0 0 / 4.77%);
+```
 
-- [GitHub Pages](https://pages.github.com/)
-- [Vercel](https://vercel.com/)
-- [Netlify](https://www.netlify.com/)
+- **Asset export**: Made it easy to export the QR image in optimal size and format, maintaining visual quality.
 
-You can host your site using one of these solutions or any of our other trusted providers. [Read more about our recommended and trusted hosts](https://medium.com/frontend-mentor/frontend-mentor-trusted-hosting-providers-bf000dfebe).
+**Advantages of using Figma in development:**
+- ✅ Reduces development time by having clear specs
+- ✅ Minimizes iterations and visual adjustments
+- ✅ Improves communication between design and development
+- ✅ Guarantees fidelity to the original design
+- ✅ Facilitates the creation of scalable design systems
 
-## Create a custom `README.md`
+**2. CSS Logical Properties**: I implemented properties like `inline-size`, `margin-block`, and `padding-inline` instead of traditional physical properties:
 
-We strongly recommend overwriting this `README.md` with a custom one. We've provided a template inside the [`README-template.md`](./README-template.md) file in this starter code.
+```css
+.qr-card {
+    inline-size: 20rem;
+    padding-inline: var(--space-200);
+    padding-block-start: var(--space-200);
+    padding-block-end: var(--space-500);
+}
+```
 
-The template provides a guide for what to add. A custom `README` will help you explain your project and reflect on your learnings. Please feel free to edit our template as much as you like.
+**3. Custom font loading**: I learned to load local fonts with @font-face while optimizing performance:
 
-Once you've added your information to the template, delete this file and rename the `README-template.md` file to `README.md`. That will make it show up as your repository's README file.
+```css
+@font-face {
+    font-family: 'Outfit';
+    src: url('./assets/fonts/static/Outfit-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-display: swap;
+}
+```
 
-## Submitting your solution
+**4. Flexbox centering**: I implemented perfect vertical and horizontal centering using flexbox on the body:
 
-Submit your solution on the platform for the rest of the community to see. Follow our ["Complete guide to submitting solutions"](https://medium.com/frontend-mentor/a-complete-guide-to-submitting-solutions-on-frontend-mentor-ac6384162248) for tips on how to do this.
+```css
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+```
 
-Remember, if you're looking for feedback on your solution, be sure to ask questions when submitting it. The more specific and detailed you are with your questions, the higher the chance you'll get valuable feedback from the community.
+**5. Organized CSS variables**: I created a design token system based on Figma specifications:
 
-## Sharing your solution
+```css
+:root {
+    /* Color tokens from Figma */
+    --White: hsl(0, 0%, 100%);
+    --Slate-300: hsl(212, 45%, 89%);
+    
+    /* Spacing tokens from Figma */
+    --space-500: 2.5rem;
+    --space-300: 1.5rem;
+    --space-200: 1rem;
+}
+```
 
-There are multiple places you can share your solution:
+### Challenges faced and solutions
 
-1. Share your solution page in the **#finished-projects** channel of the [community](https://www.frontendmentor.io/community). 
-2. Tweet [@frontendmentor](https://twitter.com/frontendmentor) and mention **@frontendmentor**, including the repo and live URLs in the tweet. We'd love to take a look at what you've built and help share it around.
-3. Share your solution on other social channels like LinkedIn.
-4. Blog about your experience building your project. Writing about your workflow, technical choices, and talking through your code is a brilliant way to reinforce what you've learned. Great platforms to write on are [dev.to](https://dev.to/), [Hashnode](https://hashnode.com/), and [CodeNewbie](https://community.codenewbie.org/).
+**Challenge 1: Transitioning from design to code**
+- **Problem**: Correctly interpreting the visual design and translating it into precise CSS.
+- **Solution**: Used Figma to inspect the design, obtain exact measurements, and create CSS variables that reflect the design system. This eliminated guesswork and accelerated development.
 
-We provide templates to help you share your solution once you've submitted it on the platform. Please do edit them and include specific questions when you're looking for feedback. 
+**Challenge 2: Perfect vertical and horizontal centering**
+- **Problem**: Making the QR component centered exactly as in the Figma design.
+- **Solution**: Used `min-height: 100vh` on the body with flexbox to guarantee perfect centering regardless of screen size.
 
-The more specific you are with your questions the more likely it is that another member of the community will give you feedback.
+**Challenge 3: Correct semantic structure**
+- **Problem**: Deciding on the appropriate semantic HTML structure while maintaining visual fidelity.
+- **Solution**: I used `<main>` for the main content and `<article>` for the card component, improving accessibility without compromising the design.
 
-## Got feedback for us?
+**Challenge 4: Exact spacing and proportions**
+- **Problem**: Maintaining the exact proportions from the Figma design.
+- **Solution**: Implemented a CSS variable system based on Figma's spacing tokens (16px, 24px, 40px) to maintain absolute consistency with the design.
 
-We love receiving feedback! We're always looking to improve our challenges and our platform. So if you have anything you'd like to mention, please email hi[at]frontendmentor[dot]io.
+**Challenge 5: Font optimization**
+- **Problem**: Loading the Outfit font specified in Figma without affecting performance.
+- **Solution**: Implemented @font-face with `font-display: swap` and local font loading to optimize initial performance.
 
-This challenge is completely free. Please share it with anyone who will find it useful for practice.
+### Continued development
 
-**Have fun building!** 🚀
+Areas I need to continue developing:
+
+1. **Advanced Figma**: 
+   - Learn to use Figma components and variants
+   - Master Auto Layout to better understand flexible design systems
+   - Explore Figma plugins to accelerate workflow (such as CSS export plugins)
+
+2. **Design Systems**: 
+   - Create more robust design token systems based on Figma
+   - Implement tools like Style Dictionary to sync tokens between Figma and CSS
+
+3. **CSS Logical Properties**: Deepen their use for complex layouts and edge cases with RTL.
+
+4. **Font optimization**: Learn more about font loading strategies (subsetting, WOFF2, variable fonts).
+
+5. **Advanced responsive design**: Implement techniques like container queries and fluid values with `clamp()`.
+
+6. **Accessibility**: Improve the use of ARIA attributes and ensure better color contrast according to WCAG 2.1.
+
+7. **Collaboration workflow**: Improve communication with designers using tools like Figma comments and Dev Mode.
+
+### Useful resources
+
+- [Figma for Developers](https://www.figma.com/developers) - Official documentation that helped me understand how to inspect designs and extract CSS.
+- [Figma Dev Mode](https://help.figma.com/hc/en-us/articles/15023124644247-Guide-to-Dev-Mode) - Essential guide for developers working with Figma designs.
+- [MDN CSS Logical Properties](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Logical_Properties) - Helped me understand logical properties and their implementation.
+- [CSS Tricks - Complete Guide to Flexbox](https://css-tricks.com/snippets/css/a-guide-to-flexbox/) - Excellent reference for centering and alignment with flexbox.
+- [Web.dev - Font Best Practices](https://web.dev/font-best-practices/) - Useful guide for custom font optimization.
+- [Design Tokens](https://www.designtokens.org/) - Standard for creating scalable token systems between design and development.
+
+## Author
+
+- Website - [Johan Zambrano](https://github.com/jazs790715)
+- Frontend Mentor - [@jazs790715](https://www.frontendmentor.io/profile/jazs790715)
+- GitHub - [@jazs790715](https://github.com/jazs790715)
