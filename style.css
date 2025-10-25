@@ -116,6 +116,7 @@ body{
 
 .qr-image{
     width: 100%;
+    height: 288px;
     display: flex;
     flex-direction: column;
     
